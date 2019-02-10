@@ -38,6 +38,19 @@ import org.springframework.util.Assert;
  * later classes will override those defined in earlier classes. This can be leveraged to
  * deliberately override certain bean definitions via an extra {@code @Configuration}
  * class.
+ * <p>
+ *
+ * 독립 애플리케이션 컨텍스트, 주석 클래스를 입력으로 수용 - 특히
+ * {@link Configuration @Configuration}-Annotated Class, 그러나 평이한 Class
+ * {@link org.springframework.stereotype.Component @Component} 종류 및 JSR-330 규격
+ * {@code javax.inject} 주석을 사용하는 클래스. 클래스를 하나씩 등록할 수 있습니다.
+ * {@link #register(Class...)}과(와) 다음을 사용하는 클래스 경로 검색에 사용됩니다.
+ * {@link #scan(String...)}.
+ *
+ * <p> {@code @Configuration} 클래스가 여러 개 있는 경우 에서 @{@link Bean} 메서드가 정의됩니다.
+ * 이후 클래스는 이전 클래스에 정의된 클래스보다 우선합니다. 이 기능을 활용할 수 있습니다.
+ * 추가 {@code @Configuration}을 통해 특정 빈 정의를 의도적으로 재정의합니다.
+ * 클래스.
  *
  * <p>See @{@link Configuration}'s javadoc for usage examples.
  *
